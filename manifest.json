@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "GPT Omnibox",
+  "version": "1.0",
+  "description": "Send omnibox input to a local server",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["activeTab", "scripting"],
+  "action": {},
+  "content_scripts": [
+    {
+      "matches": ["https://chat.openai.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": ["https://chat.openai.com/*"]
+}
